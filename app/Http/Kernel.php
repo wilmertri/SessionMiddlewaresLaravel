@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'account-email-verified' => \App\Http\Middleware\AccountEmailVerify::class,
         'last-session-login' => \App\Http\Middleware\LastSessionLogin::class,
+        'save-cookie-login' => \App\Http\Middleware\SaveCookieLogin::class,
     ];
 }

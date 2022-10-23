@@ -17,12 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'home')->middleware(['auth','account-email-verified', 'last-session-login']);
+Route::group(['middleware' => ['auth']], function(){
 
-Route::get('verificacion', function(){
-    return "Por favor verifique su cuenta";
-})->middleware('auth');
+    Route::view('home', 'home')->middleware(['account-email-verified', 
+                                                'last-session-login',
+                                                'save-cookie-login']);
+    
+    Route::get('verificacion', function(){
+        return "Por favor verifique su cuenta";
+    });
+    
+    Route::get('sesiones', function(){
+        return "Su sesión ha durado mas de un día";
+    });
+});
 
-Route::get('sesiones', function(){
-    return "Su sesión ha durado mas de un día";
-})->middleware(['auth', 'account-email-verified']);
