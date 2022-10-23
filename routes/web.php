@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'home');
+Route::view('home', 'home')->middleware('account.email.verified');
+Route::get('verificacion', function(){
+    return "Por favor verifique su cuenta";
+});
