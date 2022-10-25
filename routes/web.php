@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::view('home', 'home')->middleware(['account-email-verified', 
                                                 'last-session-login',
                                                 'save-cookie-login']);
+
+    Route::get('auth/user/two-factor-auth', [TwoFactorAuthenticationController::class, 'index'])->name('auth.two-factor-auth');
     
     Route::get('verificacion', function(){
         return "Por favor verifique su cuenta";
