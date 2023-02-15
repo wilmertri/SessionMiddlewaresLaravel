@@ -38,6 +38,8 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
+        Fortify::registerView('auth.register');
+
         Fortify::twoFactorChallengeView(function () {
             return view('auth.two-factor-challenge');
         });
