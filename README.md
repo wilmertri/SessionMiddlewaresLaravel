@@ -8,7 +8,7 @@ Desarrollo de una app de prueba para el manejo de diferentes tipos de sesiones y
 
 Primero clonar este repositorio, instalar las dependencias y configurar tu archivo .env
 
-```
+```sh
 git clone https://github.com/wilmertri/SessionMiddlewaresLaravel.git
 cd SessionMiddlewaresLaravel
 composer install
@@ -17,7 +17,7 @@ cp .env.example .env
 
 Luego correr las migraciones y los seeders necesarios, se creara la base de datos
 
-```
+```sh
 php artisan migrate --seed
 ```
 
@@ -30,12 +30,12 @@ php artisan migrate --seed
 
 Ubicados en SessionMiddlewaresLaravel
 
-```
+```sh
 npm install
 ```
 
 ## Compilar y correr servidor NPM para desarrollo
-```
+```sh
 npm run serve
 ```
 
